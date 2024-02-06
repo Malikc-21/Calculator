@@ -1,0 +1,57 @@
+body {
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+
+}
+#bod {
+    display: flex;
+    height: 740px;
+    width: 600px;
+    border: solid black;
+    flex-direction: column;
+
+
+
+}
+
+#results {
+    display: flex;
+    border: solid black;
+    height: 30%;
+}
+
+#misc {
+    display: flex;
+    border: solid black;
+    height: 15%;
+
+}
+
+#numFunc{
+    display: flex;
+    border: solid black;
+    height: 100%;
+    padding: 1px;
+
+}
+
+#num {
+    display: flex;
+    border: solid black;
+    width: 100%;
+    
+    
+
+}
+
+#func {
+    display: flex;
+    border: solid black;
+    width: 30%;
+}
