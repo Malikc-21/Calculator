@@ -6,17 +6,24 @@ function subtract(a, b) {
     return a - b;
   };
 
+let clear = true
 let type;
 let num1;
 let num2;
 let array = []
+let gone = false
+
+const results = document.querySelector("#results")
 
 const operator = document.querySelector("#func")
 const which = operator.querySelectorAll("#add")
 
 which.forEach((button) => {
+
     button.addEventListener("click", () => {
+    if (clear == true){
     num1 = parseInt(array.join(""))
+    }
     type = button.textContent
     array = []
 })
@@ -33,11 +40,20 @@ equal.addEventListener("click", () => {
 
 
 function operate(){
+    clear = false
+
     if(type == "+"){
-    console.log(add(num1, num2))
+        
+        console.log (add(num1, num2))
+    num1 = add(num1, num2)
+    
+
     } else if (type == "-") {
+        
         console.log(subtract(num1, num2))
+        num1 = subtract(num1, num2)
     }
+    
     
     
 }
@@ -53,6 +69,17 @@ number.forEach((button) => {
             
     })
 })
+
+let erase = document.querySelector("#erase")
+
+
+        erase.addEventListener("click", () => {
+    clear = true
+    num1 = undefined
+    num2 = undefined
+})
+
+
 
 
 
