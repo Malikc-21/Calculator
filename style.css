@@ -27,6 +27,7 @@ body {
     border-bottom: solid rgb(56, 55, 55) 8px;
     height: 15%;
     flex-shrink: 0;
+    flex-wrap: wrap;
     padding: 20px;
     font-size: 20px;
     border-top-left-radius: 10px;
@@ -113,6 +114,8 @@ body {
     font-size: 30px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: plum;
+    display: flex;
+    flex-shrink: 2;
 }
 
 .bro{ 
