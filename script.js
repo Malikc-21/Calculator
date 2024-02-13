@@ -1,3 +1,4 @@
+
 function add(a, b) {
     return a + b;
   };
@@ -6,26 +7,41 @@ function subtract(a, b) {
     return a - b;
   };
 
+function multiply(a, b) {
+    return a * b;
+  };
+
+function divide(a, b) {
+    return a / b;
+  };
+
+
+next = false
+let neg = false
+let full = false
 let clear = true
 let type;
 let num1;
 let num2;
 let array = []
-let gone = false
+
 
 const results = document.querySelector("#results")
 
 const operator = document.querySelector("#func")
-const which = operator.querySelectorAll("#add")
+const which = operator.querySelectorAll("#extra")
 
 which.forEach((button) => {
 
+
     button.addEventListener("click", () => {
     if (clear == true){
-    num1 = parseInt(array.join(""))
+    num1 = parseFloat(array.join(""))
     }
     type = button.textContent
     array = []
+    next = true
+    
 })
 })
 
@@ -33,26 +49,53 @@ let equal = document.querySelector("#equal")
 
 equal.addEventListener("click", () => {
     
-    num2 = parseInt(array.join(""))
+    num2 = parseFloat(array.join(""))
     array = []
+    neg = false
     operate()
 })
 
 
 function operate(){
+    full = true
     clear = false
+    
+    if (num2 == 0 && type == "÷"){
+        results.textContent = ('ERROR')
 
-    if(type == "+"){
-        
-        console.log (add(num1, num2))
+    } else if(type == "+") {
+    console.log (add(num1, num2))
+    results.textContent = (add(num1, num2))
     num1 = add(num1, num2)
+    type = null
     
 
     } else if (type == "-") {
         
         console.log(subtract(num1, num2))
+        results.textContent = (subtract(num1, num2))
         num1 = subtract(num1, num2)
+        type = null
+        
+        
+    } else if (type == "x") {
+        
+        console.log(multiply(num1, num2))
+        results.textContent = (multiply(num1, num2))
+        num1 = multiply(num1, num2)
+        type = null
+        
+        
+    } else if (type == "÷") {
+        
+        console.log(divide(num1, num2))
+        results.textContent = (divide(num1, num2))
+        num1 = divide(num1, num2)
+        type = null
+        
+        
     }
+
     
     
     
@@ -66,18 +109,116 @@ number.forEach((button) => {
 
         button.addEventListener('click', () => {
             array.push(button.textContent)
+            if (full == true && type == null) {
+                results.textContent = ""
+                clear = true 
+            }
+        full = false
             
     })
 })
 
 let erase = document.querySelector("#erase")
 
+    
 
-        erase.addEventListener("click", () => {
-    clear = true
-    num1 = undefined
-    num2 = undefined
+    erase.addEventListener("click", () => {
+        array = []
+        clear = true
+        num1 = undefined
+        num2 = undefined
+        full = false
+        neg = false
+        destroy()
 })
+
+number.forEach((button) => {
+
+    button.addEventListener('click', () => {
+        const tree = document.createElement('p')
+        tree.className = "ints"
+        tree.textContent = button.textContent
+        results.appendChild(tree)
+
+        
+        
+})
+})
+
+which.forEach((button) => {
+
+    button.addEventListener('click', () => {
+        const tree = document.createElement('p')
+        tree.className = "bro"
+        tree.textContent = button.textContent
+        results.appendChild(tree)
+    
+})
+})
+
+function destroy(){
+    
+    results.textContent = ""
+    const res = document.querySelector("#results")
+
+    const child = res.querySelectorAll(".bro")
+
+    child.forEach((child) => {
+        res.removeChild(child)
+    })
+
+}
+
+
+
+negative = document.querySelector("#negative")
+
+negative.addEventListener('click', () => {
+    
+if (next == true){
+
+    if (neg == false) {
+        
+        array.splice(0, 0, "-")
+        neg = true
+        const before = document.querySelector(".bro")
+        before.insertAdjacentText('beforeend', "-")
+
+    } else if (neg == true) {
+        array.shift()
+        neg = false
+        const before = document.querySelector(".bro")
+        let str = before.textContent
+        str = str.replace("-", "")
+        before.textContent = str
+    }
+}
+
+
+
+    if (next == false) {
+
+        if (neg == false) {
+        
+            array.splice(0, 0, "-")
+            neg = true
+            const before = document.querySelector(".ints")
+            before.insertAdjacentText('afterbegin', "-")
+        
+        } else if (neg == true) {
+            array.shift()
+            neg = false
+            const before = document.querySelector(".ints")
+            let str = before.textContent
+            str = str.replace("-", "")
+            before.textContent = str
+    }
+
+}
+
+})
+
+
 
 
 
