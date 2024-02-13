@@ -33,14 +33,21 @@ const which = operator.querySelectorAll("#extra")
 
 which.forEach((button) => {
 
-
+    
     button.addEventListener("click", () => {
     if (clear == true){
     num1 = parseFloat(array.join(""))
     }
+    if (type != null) {
+        num2 = parseFloat(array.join(""))
+    array = []
+    neg = false
+    next = false
+    operate()
+    }
     type = button.textContent
     array = []
-    next = true
+    next = true 
     
 })
 })
