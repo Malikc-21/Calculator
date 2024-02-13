@@ -1,3 +1,5 @@
+
+
 body {
     margin-top: 100px;
     margin-left: 100px;
@@ -6,62 +8,126 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-   
+    background-color: rgba(68, 34, 57, 0.568);
 
 }
 #bod {
     display: flex;
-    height: 740px;
-    width: 600px;
-    border: solid black;
+    height: 540px;
+    width: 320px;
+    border: solid rgb(56, 55, 55) 10px;
     flex-direction: column;
-
-
+    border-radius: 24px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 
 }
 
 #results {
     display: flex;
-    border: solid black;
-    height: 30%;
-}
-
-#misc {
-    display: flex;
-    border: solid black;
+    border-bottom: solid rgb(56, 55, 55) 8px;
     height: 15%;
-
+    flex-shrink: 0;
+    padding: 20px;
+    font-size: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: rgb(20, 20, 18);
+    font-weight: 700;
+    color: plum;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
+
 
 #numFunc{
     display: flex;
-    border: solid black;
+    padding: 0px;
     height: 100%;
-    padding: 1px;
+    border-bottom-left-radius: 10px;
+    padding: 0px;
+    flex-grow: 0;
+    
 
 }
 
 #num {
     display: flex;
-    border: solid black;
     width: 100%;
-    flex-direction: column;
-    flex: 1;
-    
-
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: rgb(20, 20, 18);
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 #func {
     display: flex;
-    border: solid black;
     width: 30%;
+    background-color: rgb(20, 20, 18);
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    border-bottom-right-radius: 10px;
+
 }
 
-button {
+#extra, #equal, #erase {
     display: flex;
-    height: 100%;
+    height: 52px;
+    width: 57px;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    gap: 0px;
+    font-size: larger;
+    box-shadow: 3px 4px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    font-weight: 900;
+    color: plum;
+    background-color: rgb(71, 70, 70);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
+}
+
+#number, #negative {
+    font-size: larger;
+    display: flex;
+    height: 75px;
+    width: 70px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 3px 4px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    font-size: larger;
+    font-weight: 900;
+    background-color: rgb(71, 70, 70);
+    color: wheat;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.ints, .bro{
+    font-size: 30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: plum;
+}
+
+.bro{ 
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#erase {
+    color: red;
+    font-size: medium;
+    font-weight: 500;
+}
+
+#equal {
+    color: white;
+    background-color: palevioletred;
+
 }
