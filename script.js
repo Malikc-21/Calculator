@@ -24,7 +24,7 @@ let type;
 let num1;
 let num2;
 let array = []
-
+onFire = false
 
 const results = document.querySelector("#results")
 
@@ -35,12 +35,13 @@ which.forEach((button) => {
 
     
     button.addEventListener("click", () => {
-    if (clear == true){
+    if (clear == true && onFire == false){
     num1 = parseFloat(array.join(""))
+    onFire = true
     }
-    if (type != null) {
-        num2 = parseFloat(array.join(""))
-    array = []
+    if (type != null && onFire == true) {
+    clear = false
+    num2 = parseFloat(array.join(""))
     neg = false
     next = false
     operate()
@@ -138,6 +139,7 @@ let erase = document.querySelector("#erase")
         full = false
         neg = false
         type = null
+        onFire = false
         destroy()
 })
 
