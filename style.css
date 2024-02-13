@@ -131,3 +131,9 @@ body {
     background-color: palevioletred;
 
 }
+
+h1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: wheat;
+    padding-bottom: 20px;
+}

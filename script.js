@@ -52,6 +52,7 @@ equal.addEventListener("click", () => {
     num2 = parseFloat(array.join(""))
     array = []
     neg = false
+    next = false
     operate()
 })
 
@@ -182,7 +183,7 @@ if (next == true){
         array.splice(0, 0, "-")
         neg = true
         const before = document.querySelector(".bro")
-        before.insertAdjacentText('beforeend', "-")
+        before.insertAdjacentText('beforeend', " -")
 
     } else if (neg == true) {
         array.shift()
@@ -191,7 +192,9 @@ if (next == true){
         let str = before.textContent
         str = str.replace("-", "")
         before.textContent = str
+        
     }
+    
 }
 
 
@@ -215,6 +218,7 @@ if (next == true){
     }
 
 }
+
 
 })
 
