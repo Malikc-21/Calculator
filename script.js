@@ -137,6 +137,7 @@ let erase = document.querySelector("#erase")
         num2 = undefined
         full = false
         neg = false
+        type = null
         destroy()
 })
 
