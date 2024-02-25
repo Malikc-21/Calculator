@@ -23,10 +23,9 @@ let type;
 let num1;
 let num2;
 let array = []
-onFire = false
+continuing = false
 
 const results = document.querySelector("#results")
-
 const operator = document.querySelector("#func")
 const which = operator.querySelectorAll("#extra")
 
@@ -34,11 +33,11 @@ which.forEach((button) => {
 
     
     button.addEventListener("click", () => {
-    if (clear == true && onFire == false){
+    if (clear == true && continuing == false){
     num1 = parseFloat(array.join(""))
-    onFire = true
+    continuing = true
     }
-    if (type != null && onFire == true) {
+    if (type != null && continuing == true) {
     clear = false
     num2 = parseFloat(array.join(""))
     neg = false
@@ -100,13 +99,8 @@ function operate(){
         results.textContent = (divide(num1, num2))
         num1 = divide(num1, num2)
         type = null
-        
-        
     }
 
-    
-    
-    
 }
 
 
@@ -120,8 +114,13 @@ number.forEach((button) => {
             if (full == true && type == null) {
                 results.textContent = ""
                 clear = true 
+                full = false
+                
+                type = null
+                continuing = false
             }
         full = false
+        
             
     })
 })
@@ -138,7 +137,7 @@ let erase = document.querySelector("#erase")
         full = false
         neg = false
         type = null
-        onFire = false
+        continuing = false
         destroy()
 })
 
@@ -159,7 +158,7 @@ which.forEach((button) => {
 
     button.addEventListener('click', () => {
         const tree = document.createElement('p')
-        tree.className = "bro"
+        tree.className = "ops"
         tree.textContent = button.textContent
         results.appendChild(tree)
     
@@ -171,7 +170,7 @@ function destroy(){
     results.textContent = ""
     const res = document.querySelector("#results")
 
-    const child = res.querySelectorAll(".bro")
+    const child = res.querySelectorAll(".ops")
 
     child.forEach((child) => {
         res.removeChild(child)
@@ -191,13 +190,13 @@ if (next == true){
         
         array.splice(0, 0, "-")
         neg = true
-        const before = document.querySelector(".bro")
+        const before = document.querySelector(".ops")
         before.insertAdjacentText('beforeend', " -")
 
     } else if (neg == true) {
         array.shift()
         neg = false
-        const before = document.querySelector(".bro")
+        const before = document.querySelector(".ops")
         let str = before.textContent
         str = str.replace("-", "")
         before.textContent = str
